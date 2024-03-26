@@ -55,3 +55,5 @@ const validacionReceta = [
     .withMessage("El autor debe tener entre 3 y 60 caracteres"),
   (req, res, next) => resultadoValidacion(req, res, next),
 ];
+
+export default validacionReceta;
