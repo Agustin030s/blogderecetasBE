@@ -1,3 +1,4 @@
+import { json } from "express";
 import Receta from "../database/models/receta.js";
 
 export const crearReceta = async (req, res) => {
@@ -36,6 +37,18 @@ export const obtenerReceta = async (req, res) => {
     console.error(error);
     res.status(404).json({
       message: "No se pudo obtener la receta",
+    });
+  }
+};
+
+export const obtenerPrimerasRecetas = async (req, res) => {
+  try {
+    const recetas = await Receta.find().limit(4);
+    res.status(200).json(recetas);
+  } catch (error) {
+    console.error(error);
+    res.status(404).json({
+      message: "No se pudo obtener las recetas",
     });
   }
 };
