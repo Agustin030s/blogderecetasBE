@@ -5,7 +5,7 @@ import {
   eliminarReceta,
   listarRecetas,
   obtenerReceta,
-} from "../controllers/recetas.controllers";
+} from "../controllers/recetas.controllers.js";
 
 const router = Router();
 
